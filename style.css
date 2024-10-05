@@ -1,0 +1,324 @@
+:root {
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+  /*light MOde Colors*/
+  --bg: hsl(0, 0%, 100%);
+  --Top-bg-Pattern: hsl(225, 100%, 98%);
+  --Card-bg: hsl(227, 47%, 96%);
+  --Text: hsl(228, 12%, 44%);
+  --Text-bold: hsl(230, 17%, 14%);
+  --Toggle: hsl(230, 22%, 74%);
+  --hover: #e1e3f0;
+  /*font-weight*/
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/*Dark Mode*/
+.darkmode{
+    --bg:  hsl(230, 17%, 14%);
+  --Top-bg-Pattern: hsl(232, 19%, 15%);
+  --Card-bg: hsl(228, 28%, 20%);
+  --Text: hsl(228, 34%, 66%);
+  --Text-bold: hsl(0, 0%, 100%);
+  --Toggle: linear-gradient to right, hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+  --hover: #e1e3f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--fw-normal);
+  font-size: 1.4rem;
+  background-color: var(--bg);
+  color: var(--Text);
+  transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: var(--fw-bold);
+}
+
+header {
+  position: relative;
+  height: 24rem;
+  width: 100%;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Top-bg-Pattern);
+  border-radius: 0 0 2rem 2rem;
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  padding-inline: 2.5rem;
+  margin-inline: auto;
+  max-width: 1170px;
+  z-index: 3;
+}
+
+.container .dashboard_header {
+  position: relative;
+  padding: 3.7rem 0 0 0;
+}
+
+.container .dashboard_header h1 {
+  font-size: 2.4rem;
+  color: var(--Text-bold);
+}
+
+.container .dashboard_header p {
+  margin-top: 0.3rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 2.3rem;
+}
+
+.container .dashboard_header .button {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.container .dashboard_header .button .toggle {
+  position: relative;
+  display: block;
+  width: 4.5rem;
+  height: 2.3rem;
+  border-radius: 16rem;
+  background: var(--Toggle);
+  transition: all 0.5s ease-in-out;
+}
+
+.container .dashboard_header .button .toggle .indicator {
+  position: absolute;
+  top: 50%;
+  left: 2.4rem;
+  transform: translateY(-50%);
+  width: 1.8rem;
+  aspect-ratio: 1;
+  background-color: var(--Card-bg);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.container .dashboard_header .button .toggle.active .indicator {
+  left: 0.3rem;
+}
+
+.container .dashboard_header .button span {
+  font-weight: var(--fw-bold);
+}
+
+.container .dashboard_body .box {
+  position: relative;
+  background-color: var(--Card-bg);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.4rem 0 2rem 0;
+  border-top-width: 0.3rem;
+  border-top-style: solid;
+  border-top-color: var(--border-color);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.container .dashboard_body .instagram {
+  border-style: none;
+}
+
+.container .dashboard_body .instagram::before {
+  content: "";
+  position: absolute;
+  background: var(--Instagram);
+  top: -0.3rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.container .dashboard_body .box:first-child {
+  margin-top: -5.2rem;
+}
+
+.container .dashboard_body .box:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
+.container .dashboard_body .box .box_top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container .dashboard_body .box .box_top span {
+  font-weight: var(--fw-bold);
+  font-size: 1.2rem;
+  color: var(--Text);
+}
+
+.container .dashboard_body .box h2 {
+  margin-top: 2.3rem;
+  font-size: 5rem;
+  color: var(--Text-bold);
+}
+
+.container .dashboard_body .box p {
+  letter-spacing: 0.6rem;
+}
+
+.container .dashboard_body .box .box_bottom {
+  margin-top: 2.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.container .dashboard_body .box .box_bottom span {
+  font-weight: var(--fw-bold);
+}
+
+.overviews{
+  padding: 4.2rem;
+}
+
+.overviews .overview_title{
+  margin-bottom: 3rem;
+}
+
+.overviews .overview_title h3{
+  font-size: 2.4rem;
+  color: var(--Text-bold);
+}
+
+.overviews .overview_box{
+  background-color: var(--Card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.4rem 2.6rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.overviews .overview_box .top,
+.overviews .overview_box .bottom{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.overviews .overview_box .bottom h5{
+  font-size: 3rem;
+  color: var(--Text-bold);
+}
+
+.overviews .overview_box .bottom div{
+  display: flex;
+  align-items: center;
+}
+
+.overviews .overview_box .bottom div span{
+  font-weight: var(--fw-bold);
+}
+
+.container .dashboard_body .box:hover,
+.overviews .overview_box:hover{
+  background-color: var(--hover);
+}
+
+@media (min-width: 768px){
+  section::before{
+    height: 20%;
+  }
+
+  hr{
+    display: none;
+  }
+
+  .container .dashboard_header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .container .dashboard_body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .container .dashboard_body .box{
+    width: calc(50% - 2rem);
+  }
+
+  .container .dashboard_body .box:not(:first-child),
+  .container .dashboard_body .box:first-child{
+    margin-top: 0;
+  }
+
+  .overviews .overview_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .overviews .overview_container .overview_box{
+    width: calc(50% - 2rem);
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 901px){
+  section::before{
+    height: 30%;
+  }
+
+  .container .dashboard_body h1{
+    font-size: 2.8rem;
+  }
+
+  .container .dashboard_body{
+    margin-top: -11rem;
+  }
+
+  .container .dashboard_body .box,
+  .overviews .overview_container .overview_box{
+    width: calc(25% - 2rem);
+  }
+}
